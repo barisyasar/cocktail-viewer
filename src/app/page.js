@@ -1,9 +1,13 @@
-import { Button } from "@/components/ui/button";
+import HomeHero from "@/components/HomeHero";
+import HomeInformation from "@/components/HomeInformation";
+import { Separator } from "@/components/ui/separator";
 
 export default function Home() {
   return (
     <main className="">
-      <Button>Click me</Button>
+      <HomeHero />
+      <Separator />
+      <HomeInformation />
     </main>
   );
 }
