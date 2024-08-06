@@ -1,4 +1,5 @@
 // Home Information
+import Link from "next/link";
 import NavbarBrand from "./NavbarBrand";
 import { Separator } from "./ui/separator";
 
@@ -12,12 +13,15 @@ function HomeInformation() {
             <h2 className="text-2xl font-semibold mt-3 lg:mt-0">
               Start searching
             </h2>
-            <p className="font-light mt-3 max-w-xl mx-auto">
+            <p className="font-light my-3 max-w-xl mx-auto">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed
               ullam voluptatem enim, aut aliquid fugiat nesciunt voluptatibus
               voluptate esse ratione, pariatur odio ducimus quam debitis
               aspernatur. Minima expedita sint id?
             </p>
+            <Link href="/cocktails" className="underline underline-offset-4">
+              View all cocktails
+            </Link>
           </article>
         </div>
 
