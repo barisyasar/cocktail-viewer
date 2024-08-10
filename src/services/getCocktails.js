@@ -1,8 +1,13 @@
 // getCocktails
 export default async function getCocktails() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/cocktails`);
+  const text = await res.text();
   if (!res.ok) {
-    throw new Error("Failed to fetch cocktails");
+    throw new Error(`Failed to fetch cocktails: ${text}`);
   }
-  return await res.json();
+  try {
+    return JSON.parse(text);
+  } catch (e) {
+    throw new Error("Failed to parse JSON response");
+  }
 }
