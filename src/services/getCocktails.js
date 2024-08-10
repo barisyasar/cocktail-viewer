@@ -1,6 +1,6 @@
 // getCocktails
 export default async function getCocktails() {
-  return null;
+  return [];
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/cocktails`);
   const text = await res.text();
   if (!res.ok) {
