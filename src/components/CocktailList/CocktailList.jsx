@@ -1,14 +1,18 @@
 // Cocktail List
-import COCKTAILS from "../../cocktails";
 import CocktailCard from "../CocktailCard";
+import { ScrollArea } from "../ui/scroll-area";
 
-function CocktailList() {
+function CocktailList({ filteredCocktails }) {
   return (
-    <div>
-      {COCKTAILS.map((c) => (
-        <CocktailCard key={c.id} cocktail={c} />
-      ))}
-    </div>
+    <section>
+      <ScrollArea className="h-[calc(100vh-9rem)]">
+        <div className="cocktail-list">
+          {filteredCocktails.map((c) => (
+            <CocktailCard key={c.id} cocktail={c} />
+          ))}
+        </div>
+      </ScrollArea>
+    </section>
   );
 }
 

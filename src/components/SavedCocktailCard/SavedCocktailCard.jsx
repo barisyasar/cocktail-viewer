@@ -1,19 +1,31 @@
 import { BookmarkFilledIcon } from "@radix-ui/react-icons";
-import { Card, CardDescription, CardHeader, CardTitle } from "../ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "../ui/card";
+import DeleteSavedButton from "../DeleteSavedButton";
 
 function SavedCocktailCard({ cocktail }) {
   return (
-    <Card className="saved-cocktail-card">
+    <Card>
       <CardHeader>
         <CardTitle className="flex items-start justify-between">
-          <div>{cocktail.name}</div>
-          <BookmarkFilledIcon />
+          {cocktail.name}
+          <BookmarkFilledIcon className="size-6" />
         </CardTitle>
-        <CardDescription className="mt-3">
-          <div className="font-semibold mb-1.5">{cocktail.glass}</div>
-          <div className="font-light">{cocktail.description}</div>
+        <CardDescription className="font-semibold mb-1.5 mt-3">
+          {cocktail.glass}
         </CardDescription>
       </CardHeader>
+
+      <CardContent>{cocktail.description}</CardContent>
+      <CardFooter>
+        <DeleteSavedButton id={cocktail.id} />
+      </CardFooter>
     </Card>
   );
 }

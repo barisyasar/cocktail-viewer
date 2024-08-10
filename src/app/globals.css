@@ -66,10 +66,11 @@
   body {
     @apply bg-background text-foreground;
   }
-  .cocktail-card + .cocktail-card {
-    @apply mt-5;
+
+  a {
+    @apply underline-offset-4;
   }
-  .saved-cocktail-card + .saved-cocktail-card {
-    @apply mt-4;
+  .cocktail-list {
+    @apply container my-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7;
   }
 }

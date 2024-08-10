@@ -1,3 +1,4 @@
+// Cocktail Card
 import KeywordList from "../KeywordList";
 import {
   Card,
@@ -7,21 +8,30 @@ import {
   CardHeader,
   CardTitle,
 } from "../ui/card";
+import BasketToggleButton from "../BasketToggleButton";
+import CocktailCardBookMark from "./CocktailCardBookMark";
 
 function CocktailCard({ cocktail }) {
   return (
-    <Card className="cocktail-card">
+    <Card className="flex flex-col justify-between">
       <CardHeader>
-        <CardTitle>{cocktail.name}</CardTitle>
+        <CardTitle className="flex justify-between">
+          {cocktail.name}
+          <CocktailCardBookMark id={cocktail.id} />
+        </CardTitle>
         <CardDescription>{cocktail.glass}</CardDescription>
       </CardHeader>
-      <CardContent className="max-w-3xl">
-        <p className="mb-4">{cocktail.description}</p>
-        <KeywordList keywords={cocktail.keywords} />
-      </CardContent>
-      <CardFooter className="gap-5 lg:flex lg:flex-col lg:gap-3 lg:m-6">
-        {/* <cocktailDetailDialog cocktail={cocktail} /> */}
-      </CardFooter>
+
+      <div>
+        <CardContent className="max-w-3xl">
+          <div className="mb-4">{cocktail.description}</div>
+          <KeywordList keywords={cocktail.keywords} />
+        </CardContent>
+
+        <CardFooter className="text-orange-400">
+          <BasketToggleButton cocktail={cocktail} />
+        </CardFooter>
+      </div>
     </Card>
   );
 }

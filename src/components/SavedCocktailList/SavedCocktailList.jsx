@@ -1,11 +1,14 @@
 // Saved Cocktail List
-import COCKTAILS from "../../cocktails.json";
+"use client";
+import useZustand from "@/hooks/useZustand";
 import SavedCocktailCard from "../SavedCocktailCard";
 
 function SavedCocktailList() {
+  const { savedCocktails } = useZustand();
+
   return (
-    <div className="container my-3">
-      {COCKTAILS.map((c) => (
+    <div className="cocktail-list">
+      {savedCocktails.map((c) => (
         <SavedCocktailCard key={c.id} cocktail={c} />
       ))}
     </div>

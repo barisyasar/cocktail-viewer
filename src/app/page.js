@@ -1,13 +1,12 @@
-import HomeHero from "@/components/HomeHero";
-import HomeInformation from "@/components/HomeInformation";
-import { Separator } from "@/components/ui/separator";
+import Cocktails from "@/components/Cocktails";
+import getCocktails from "@/services/getCocktails";
 
-export default function Home() {
+export default async function Home() {
+  const cocktails = await getCocktails();
+
   return (
-    <main className="">
-      <HomeHero />
-      <Separator />
-      <HomeInformation />
+    <main>
+      <Cocktails cocktails={cocktails} />
     </main>
   );
 }

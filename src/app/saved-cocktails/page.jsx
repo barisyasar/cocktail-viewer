@@ -1,12 +1,12 @@
-import SavedCocktailList from "../SavedCocktailList";
+// Saved Cocktail Page
+import SavedCocktailList from "@/components/SavedCocktailList";
 
-// Saved Cocktails
 function SavedCocktails() {
   return (
-    <div className="container">
+    <main>
       <div className="mt-7 mb-5 text-xl text-center">Saved Cocktails</div>
       <SavedCocktailList />
-    </div>
+    </main>
   );
 }
 
