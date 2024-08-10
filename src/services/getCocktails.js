@@ -4,5 +4,5 @@ export default async function getCocktails() {
   if (!res.ok) {
     throw new Error("Failed to fetch cocktails");
   }
-  return res.json();
+  return await res.json();
 }
