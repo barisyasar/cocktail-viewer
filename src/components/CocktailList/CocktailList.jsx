@@ -5,7 +5,7 @@ import { ScrollArea } from "../ui/scroll-area";
 function CocktailList({ filteredCocktails }) {
   return (
     <section>
-      <ScrollArea className="h-[calc(100vh-9rem)]">
+      <ScrollArea className="h-[calc(100dvh-9rem)]">
         <div className="cocktail-list">
           {filteredCocktails.map((c) => (
             <CocktailCard key={c.id} cocktail={c} />
