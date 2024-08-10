@@ -36,7 +36,6 @@ const useZustand = create(
     }),
     {
       name: "saved-cocktails",
-      getStorage: () => localStorage,
       partialize: (state) => ({
         savedCocktails: state.savedCocktails,
       }),

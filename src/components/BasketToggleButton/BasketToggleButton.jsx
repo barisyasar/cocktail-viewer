@@ -9,7 +9,7 @@ function BasketToggleButton({ cocktail }) {
   const isSaved = savedCocktails.some((item) => item.id === cocktail.id);
 
   return (
-    <div suppressHydrationWarning>
+    <div>
       {isSaved ? (
         "Already saved. Can't add to basket."
       ) : (

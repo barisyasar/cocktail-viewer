@@ -71,6 +71,6 @@
     @apply underline-offset-4;
   }
   .cocktail-list {
-    @apply container my-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7;
+    @apply container my-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7;
   }
 }
